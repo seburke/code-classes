@@ -1,0 +1,13 @@
+cat testlog | ./mapperHits.py | sort | ./reducerHits.py 
+head -50 access_log > testlog
+scp training@192.168.0.119:/home/training/udacity_training/data/access_log .
+scp access_logx training@192.168.0.119:/home/training/udacity_training/data/access_log
+
+
+##On hadoop machine
+
+hadoop fs -mkdir myinput
+hadoop fs -put file.txt myinput
+hs mapper.py reducer.py myinput myoutput
+
+hadoop fs -cat myoutput/part-00000 | grep "blah"
