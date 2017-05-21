@@ -3,3 +3,4 @@ hadoop/vm
 .DS_Store
 .idea/
 resources/
+target/
